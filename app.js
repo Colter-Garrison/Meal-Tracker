@@ -1,3 +1,5 @@
+import { renderMeal, } from './utils.js';
+
 // import functions and grab DOM elements
 const ingredientsForm = document.getElementById('ingredients-form');
 const ingredientList = document.getElementById('ingredient-list');
@@ -20,5 +22,27 @@ let meal = [];
   // update DOM to reflect the new state
 ingredientsForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('submitting the form');
+    // console.log('submitting the form');
+
+    const ingredientData = new FormData(ingredientsForm);
+    // console.log(ingredientData.get('Ingredient'));
+    // console.log(ingredientData.get('Quantity'));
+
+    let ingredientQuantity = {
+        ingredient: ingredientData.get('Ingredient'),
+        quantity: ingredientData.get('Quantity'),
+        type: ingredientData.get('Measurement'),
+    };
+    ingredient.push(ingredientQuantity);
+    // console.log('list of ingredients and quantity', ingredient);
+
+    renderMeals();
 });
+
+function renderMeals() {
+    ingredientList.textContent = ' ';
+    for (let ingredientData of ingredient) {
+        const li = renderMeal(ingredientData);
+        ingredientList.append(li);
+    }
+}
