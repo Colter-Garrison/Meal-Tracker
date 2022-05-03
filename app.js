@@ -18,3 +18,7 @@ let meal = [];
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
+ingredientsForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('submitting the form');
+});
