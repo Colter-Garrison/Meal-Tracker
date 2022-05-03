@@ -30,11 +30,11 @@
                     </label>
                     <label for="quantity">
                         Quantity: 
-                        <input name="Quantity" type="number" />
+                        <input name="Quantity" type="number" id="quantity-input" />
                     </label>
                     <label for="measurement">
                         Measurement: 
-                        <select name="Measurement" id="serving">
+                        <select name="Measurement" id="serving-size">
                             <option value="cups">Cups</option>
                             <option value="grams">Grams</option>
                             <option value="milliliters">Milliliters</option>
@@ -42,7 +42,7 @@
                             <option value="tablespoons">Tablespoons</option>   
                         </select>
                     </label>
-                    <button type="submit">Add Ingredient</button>
+                    <button type="submit" id="add-ingredient-button">Add Ingredient</button>
                 </form>
                 <div class="ingredients-list">
                     <ul id="ingredient-list"></ul>
@@ -64,7 +64,7 @@
         </section>
     </main>
     <footer>
-        <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
+        <div class="copy gutter-right">&copy; 2022 Alchemy Code Lab</div>
     </footer>
 
     <script type="module" src="./app.js"></script>
