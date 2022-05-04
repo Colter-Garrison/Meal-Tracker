@@ -1,4 +1,4 @@
-import { renderMeal, } from './utils.js';
+import { renderMeal, displayMeals } from './utils.js';
 
 // import functions and grab DOM elements
 const ingredientsForm = document.getElementById('ingredients-form');
@@ -37,6 +37,7 @@ ingredientsForm.addEventListener('submit', (e) => {
     // console.log('list of ingredients and quantity', ingredient);
 
     renderMeals();
+    ingredientsForm.reset();
 });
 
 function renderMeals() {
@@ -46,3 +47,8 @@ function renderMeals() {
         ingredientList.append(li);
     }
 }
+
+removeButton.addEventListener('click', () => {
+    ingredient.pop();
+    renderMeals();
+});

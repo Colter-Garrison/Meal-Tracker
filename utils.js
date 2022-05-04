@@ -5,3 +5,7 @@ export function renderMeal(ingredientData) {
     mealLi.textContent = `${ingredientData.quantity} ${ingredientData.type} of ${ingredientData.ingredient}`;
     return mealLi;
 }
+
+export function displayMeals() {
+    
+}
