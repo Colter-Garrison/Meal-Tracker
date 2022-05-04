@@ -40,12 +40,14 @@ removeButton.addEventListener('click', () => {
 });
 
 saveMealButton.addEventListener('click', () => {
-    console.log('saving meal');
-    // const name = nameOfMeal.value;
-    // const count = ingredient.length;
-    // meal.push({ name, count });
-    // displayMeals();
-    // resetIngredients();
+    // console.log('saving meal');
+    // console.log('name of meal: ', nameOfMeal.value);
+    // console.log('ingredient length: ', ingredient.length);
+    const name = nameOfMeal.value;
+    const count = ingredient.length;
+    meal.push({ name, count });
+    displayMeal();
+    // finishedMeals.reset();
 });
 
 function renderMeals() {
@@ -53,5 +55,13 @@ function renderMeals() {
     for (let ingredientData of ingredient) {
         const li = renderMeal(ingredientData);
         ingredientList.append(li);
+    }
+}
+
+function displayMeal() {
+    finishedMeals.textContent = ' ';
+    for (let meals of meal) {
+        const li = displayMeals(meals);
+        finishedMeals.appendChild(li);
     }
 }
