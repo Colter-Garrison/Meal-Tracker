@@ -47,7 +47,7 @@ saveMealButton.addEventListener('click', () => {
     const count = ingredient.length;
     meal.push({ name, count });
     displayMeal();
-    // finishedMeals.reset();
+    resetIngredients();
 });
 
 function renderMeals() {
@@ -64,4 +64,9 @@ function displayMeal() {
         const li = displayMeals(meals);
         finishedMeals.appendChild(li);
     }
+}
+
+function resetIngredients() {
+    ingredient = [];
+    ingredientList.textContent = ' ';
 }
